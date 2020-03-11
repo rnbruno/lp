@@ -13,6 +13,18 @@ private:
 	string endereco;
 	string nome;
 public:
+	string getMatricula();
+	void setMatricula(string var_matricula);
+	
+	short getIdade();
+	void setIdade(short var_idade);
+	
+	string getContato1();
+	void setIdade(std::string var_contato1);
+	
+	string getNome();
+	void setNome(strd::string var_nome);
+	
 	Aluno();
 	Aluno(string var_matricula, short var_idade, string var_contato1, string var_endereco, string var_nome);
 	
@@ -26,21 +38,33 @@ private:
 	Aluno* participantes;  //atenção no ponteiro
 	int lotacao;
 public:
-	// get & set
+	string getCodigo();
+	void setCodigo(std::string var_codigo);
+	
+	string getDescricao();
+	void setDescricao(std::string var_descricao);
+	
+	short getCapacidade();
+	//void setParticipantes
+	void
+	
 	Turma(string var_codigo, string var_descricao, short var_capacidade, )
 	// void setParticipantes();
 
 	void addParticipantes(Aluno umAluno);
 	void mostrarAlunos();
-	void mostrarTurma();
+	
+	Turma();
+	Turma(string var_codigo, string var_descricao, short capacidade, int lotacao);
+	
 };
 //.cpp
 Aluno::Aluno(){
-    matricula = " ";
+    matricula = "";
     idade = 0;
-    contato1 = " ";
-    endereco = " ";
-    nome = " ";
+    contato1 = "";
+    endereco = "";
+    nome = "";
 }
 Aluno::Aluno(string var_matricula, short var_idade, string var_contato1, string var_endereco, string var_nome ){
     matricula = var_matricula;
@@ -58,7 +82,22 @@ Turma::Turma(string codigo, string descricao, short capacidade, Aluno,int var_lo
     Aluno = *participantes;
     lotacao = var_lotacao;
 }
-    
+string Turma::getCodigo(){
+	return codigo;
+}
+
+void Turma::setCodigo(std::string var_codigo){
+	codigo = var_codigo;
+}
+
+string Turma::getDescricao(){
+	return descricao;
+}
+
+void setDescricao(std::string var_descricao){
+	
+}
+
 void Turma::setCapacidade(short cp){
 	capacidade = cp;
 	participantes = new Aluno[capacidade];
